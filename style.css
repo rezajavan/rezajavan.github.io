@@ -89,7 +89,7 @@ svg { width: 1.1em; height: 1.1em; fill: currentColor; flex-shrink: 0; }
 }
 .eyebrow { margin: 0 0 0.5rem; color: var(--accent); font-weight: 600; letter-spacing: 0.04em; }
 .hero h1 { font-size: clamp(2.6rem, 6vw, 4rem); font-weight: 800; }
-.tagline { margin: 1rem auto 0; max-width: 40rem; font-size: clamp(1.05rem, 2.2vw, 1.25rem); color: var(--muted); }
+.tagline { margin: 1rem auto 0; max-width: 44rem; text-wrap: balance; font-size: clamp(1.05rem, 2.2vw, 1.25rem); color: var(--muted); }
 .location { display: inline-flex; align-items: center; gap: 0.35rem; margin: 0.9rem 0 0; color: var(--muted); font-size: 0.95rem; }
 .links { margin-top: 2.25rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
 
@@ -196,3 +196,21 @@ svg { width: 1.1em; height: 1.1em; fill: currentColor; flex-shrink: 0; }
   .hero { padding: 5rem 0 4rem; }
   .section { padding: 3.5rem 0; }
 }
+
+/* ---------- Experience timeline ---------- */
+.timeline { list-style: none; margin: 0; padding: 0 0 0 1.75rem; position: relative; }
+.timeline::before {
+  content: ""; position: absolute; left: 5px; top: 0.6rem; bottom: 0.6rem; width: 2px;
+  background: linear-gradient(var(--accent), var(--border));
+}
+.timeline li { position: relative; padding-bottom: 1.75rem; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+  content: ""; position: absolute; left: calc(-1.75rem + 0px); top: 0.45rem;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--bg); border: 2px solid var(--accent);
+}
+.timeline li:first-child::before { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft); }
+.timeline .when { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; color: var(--accent); }
+.timeline h3 { font-size: 1.1rem; font-weight: 650; margin: 0.2rem 0 0.15rem; }
+.timeline p { margin: 0; color: var(--muted); }
